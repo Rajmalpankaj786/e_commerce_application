@@ -1,0 +1,218 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* h2{
+        text-align: left;
+    }
+    button{
+        text-align: center;
+    } */
+    #cool>#main {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1px;
+    }
+
+    #cool>#main>div {
+        margin: 20px;
+        padding: 10px;
+        width: 50%;
+        height: 50%;
+        text-align: center;
+        gap: 2px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    /* #cool>#main>#div2{
+        text-align: left;
+    } */
+    #cool>#main>div>img {
+
+        width: 400Px;
+        height: 400px;
+    }
+
+    /* #cool>div {
+        margin: 5px;
+        padding: 10px;
+       
+    }
+
+    #cool>div>img {
+        width: 300px;
+        height: 300px;
+        padding-left: 10px;
+        margin: 30px;
+    } */
+</style>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">e-Commerce</a>
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="conatct.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div>
+            <input type="text" name="search" id="search"  placeholder= " 🔍 Search Product Here ">
+        </div>
+        <div class="actions">
+
+            <a href="cart.html" class="icon">🛒</a>
+            <a href="login.html" class="icon">👤</a>
+        </div>
+
+    </header>
+
+    <div id="cool"></div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>
+                    We are a leading brand committed to delivering high-quality products to our customers.
+                    Stay connected for the latest updates and promotions.
+                </p>
+            </div>
+
+            <!-- Links Section -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cart.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="conatct.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="footer-section newsletter">
+                <h3>Subscribe</h3>
+                <p>Sign up for exclusive offers and updates:</p>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 e-Commerce. All rights reserved.</p>
+            <ul class="socials">
+                <li><a href="#facebook">Facebook</a></li>
+                <li><a href="#twitter">Twitter</a></li>
+                <li><a href="#instagram">Instagram</a></li>
+                <li><a href="#linkedin">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    let cart = JSON.parse(localStorage.getItem("cartItem")) || [];
+    console.log(cart);
+    let arr = JSON.parse(localStorage.getItem("selectedProduct"));
+
+    displayData(arr);
+
+
+
+    function displayData(arr) {
+
+        let mainDiv = document.createElement("div");
+        mainDiv.setAttribute("id", "main");
+
+        let div1 = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.setAttribute("src", arr.image);
+
+        div1.append(img)
+
+        let div2 = document.createElement("div");
+        div2.setAttribute("id", "div2");
+        let id = document.createElement("h2");
+        id.innerText = "Id : " + arr.id;
+
+        let h1 = document.createElement("h2");
+        h1.innerText = "Title : " + arr.title;
+
+        let p1 = document.createElement("p1");
+        p1.innerText = "Description : " + arr.description;
+
+        let h2 = document.createElement("h3");
+        h2.innerText = "Category : " + arr.category;
+
+        let h4 = document.createElement("h3");
+        h4.innerText = "Price : $ " + arr.price;
+
+        let rating = document.createElement("h3");
+        rating.innerText = "Rating : " + arr.rating.rate;
+
+        let stocks = document.createElement("h3");
+        rating.innerText = "In Stock : " + arr.rating.count;
+
+        let add = document.createElement("button");
+        add.innerText = "Add To Cart";
+        add.style.backgroundColor = 'orange';
+        add.style.border = "none";
+        add.style.width = "200px";
+        add.style.height = "30px";
+        add.style.textAlign = "center";
+        add.style.borderRadius = "20px";
+        add.style.cursor = "pointer";
+
+
+        add.addEventListener("click", function () {
+            let productId = arr.id;
+            let x = cart.filter((a) => { return a.id == productId });
+            console.log(x);
+            if (x.length > 0) {
+                alert("Product is already in the cart!");
+            } else {
+                // Add product ID to the cart
+                cart.push(arr);
+                localStorage.setItem("cartItem", JSON.stringify(cart));
+                //console.log(cart)
+                alert("Product Added Successfully !")
+            }
+            
+        })
+
+        div2.append(id, h1, p1, h2, h4, rating, stocks, add);
+
+
+        mainDiv.append(div1, div2);
+
+
+        document.querySelector("#cool").append(mainDiv);
+
+
+    }
+
+    document.querySelector("#search").addEventListener("input", function (event) {
+    event.preventDefault();
+    let q = document.querySelector("#search").value;
+    let newData = bag.filter(element => {
+        return element.title.toLowerCase().includes(q.toLowerCase())
+    })
+     console.log(newData)
+    displayData(newData);
+})
+</script>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">e-Commerce</a>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="conatct.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <input type="text" name="search" id="search"  placeholder= " 🔍 Search Product Here ">
+    </div>
+    <div class="actions">
+      
+      <a href="cart.html" class="icon">🛒</a>
+      <a href="conatct.html" class="icon">👤</a>
+    </div>
+  
+  </header>
+  
+
+
+  <!-- Contact Form Section -->
+  <section class="contact-form-section">
+    <h2>Get in Touch</h2>
+    <p>Fill out the form below, and we'll get back to you as soon as possible.</p>
+    <form id="contactForm">
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Address and Map Section -->
+  <section class="address-section">
+    <div class="address">
+      <h2>Our Office</h2>
+      <p>123 Business Street, Cityville, Country</p>
+      <p>Email: support@brandname.com</p>
+      <p>Phone: +1 (123) 456-7890</p>
+    </div>
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345094316!2d144.9537363153166!3d-37.81627974279406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577be36ed180f0!2s123%20Business%20Street%2C%20Cityville!5e0!3m2!1sen!2s!4v1695073537651!5m2!1sen!2s"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- About Section -->
+      <div class="footer-section about">
+        <h3>About Us</h3>
+        <p>
+          We are a leading brand committed to delivering high-quality products to our customers.
+          Stay connected for the latest updates and promotions.
+        </p>
+      </div>
+
+      <!-- Links Section -->
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cart.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="conatct.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Section -->
+      <div class="footer-section newsletter">
+        <h3>Subscribe</h3>
+        <p>Sign up for exclusive offers and updates:</p>
+        <form action="#">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 e-Commerce. All rights reserved.</p>
+      <ul class="socials">
+        <li><a href="#facebook">Facebook</a></li>
+        <li><a href="#twitter">Twitter</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#linkedin">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>
+<script>
+ document.querySelector("#search").addEventListener("input", function (event) {
+    event.preventDefault();
+    let q = document.querySelector("#search").value;
+    let newData = bag.filter(element => {
+        return element.title.toLowerCase().includes(q.toLowerCase())
+    })
+     console.log(newData)
+    displayData(newData);
+})
+</script>

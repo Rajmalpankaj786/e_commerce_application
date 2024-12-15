@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">e-Commerce</a>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="conatct.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      
+        <input type="text" name="search" id="search"  placeholder= " 🔍 Search Product Here ">
+       
+    </div>
+    <div class="actions">
+      
+      <a href="cart.html" class="icon">🛒</a>
+      <a href="login.html" class="icon">👤</a>
+    </div>
+   
+  </header>
+  <header class="about-header">
+    <h1>About Us</h1>
+    <p>Discover our story, values, and milestones.</p>
+  </header>
+
+  <!-- Vision Section -->
+  <section class="vision-section">
+    <h2>Our Vision</h2>
+    <p>
+      To inspire and empower individuals through innovative products and unmatched services.
+      We believe in creating a sustainable and inclusive future for all.
+    </p>
+  </section>
+
+  <!-- Interactive Timeline Section -->
+  <section class="timeline-section">
+    <h2>Our Milestones</h2>
+    <div class="timeline">
+      <div class="timeline-item" data-year="2010">
+        <h3>Founded</h3>
+        <p>We started with a mission to make a difference in the industry.</p>
+      </div>
+      <div class="timeline-item" data-year="2015">
+        <h3>Global Expansion</h3>
+        <p>Expanded operations to over 20 countries worldwide.</p>
+      </div>
+      <div class="timeline-item" data-year="2020">
+        <h3>Innovation Award</h3>
+        <p>Received the top innovation award in the industry.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2>Get in Touch</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- About Section -->
+      <div class="footer-section about">
+        <h3>About Us</h3>
+        <p>
+          We are a leading brand committed to delivering high-quality products to our customers.
+          Stay connected for the latest updates and promotions.
+        </p>
+      </div>
+
+      <!-- Links Section -->
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cart.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="conatct.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Section -->
+      <div class="footer-section newsletter">
+        <h3>Subscribe</h3>
+        <p>Sign up for exclusive offers and updates:</p>
+        <form action="#">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 e-Commerce. All rights reserved.</p>
+      <ul class="socials">
+        <li><a href="#facebook">Facebook</a></li>
+        <li><a href="#twitter">Twitter</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#linkedin">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>
+<script>
+  document.querySelector("#search").addEventListener("input", function (event) {
+    event.preventDefault();
+    let q = document.querySelector("#search").value;
+    let newData = bag.filter(element => {
+        return element.title.toLowerCase().includes(q.toLowerCase())
+    })
+     console.log(newData)
+    displayData(newData);
+})
+</script>

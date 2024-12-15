@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-container">
+            <form action="#" method="POST">
+                <h2>Login</h2>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                <p>Go to home page <a href="index.html">Home</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    let isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+
+    let ls = JSON.parse(localStorage.getItem("LocalStorage")) || [];
+
+    document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let email = document.querySelector("#email").value;
+        let password = document.querySelector("#password").value;
+
+       let sEmail = ls.filter((ele) => { return ele.email.toLowerCase().includes(email.toLowerCase()) })
+       
+       console.log(sEmail.email,sEmail.password)
+
+       sEmail.filter((ele) => {
+        if (email != ele.email) {
+            alert("Bad Credential !")
+        }
+            else {
+               
+                if (password == ele.password) {
+                    alert("User Logged In Successfully !")
+                    localStorage.setItem("isLoggedIn" ,JSON.stringify("true"));
+                    window.location.href = "index.html";
+                    
+                }
+                else {
+                    alert("Incorrect Password !")
+                }
+            
+            }
+       })
+        
+
+        console.log(email, password)
+        //console.log(ls.email)
+    })
+</script>

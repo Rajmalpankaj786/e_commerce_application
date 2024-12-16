@@ -41,13 +41,15 @@
        
        console.log(sEmail.email,sEmail.password)
 
-       sEmail.filter((ele) => {
-        if (email != ele.email) {
-            alert("Bad Credential !")
+     
+        if (sEmail.length<=0) {
+            alert("Don't have an Account for this Email!");
+            window.location.href = "signUp.html";
+
         }
             else {
                
-                if (password == ele.password) {
+                if (password == sEmail[0].password) {
                     alert("User Logged In Successfully !")
                     localStorage.setItem("isLoggedIn" ,JSON.stringify("true"));
                     window.location.href = "index.html";
@@ -58,7 +60,7 @@
                 }
             
             }
-       })
+       
         
 
         console.log(email, password)

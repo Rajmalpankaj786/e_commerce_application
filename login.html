@@ -39,31 +39,24 @@
 
        let sEmail = ls.filter((ele) => { return ele.email.toLowerCase().includes(email.toLowerCase()) })
        
-       console.log(sEmail.email,sEmail.password)
+       //console.log(sEmail.email,sEmail.password)
 
-     
         if (sEmail.length<=0) {
             alert("Don't have an Account for this Email!");
             window.location.href = "signUp.html";
-
         }
             else {
                
                 if (password == sEmail[0].password) {
                     alert("User Logged In Successfully !")
                     localStorage.setItem("isLoggedIn" ,JSON.stringify("true"));
-                    window.location.href = "index.html";
-                    
+                    window.location.href = "index.html"; 
                 }
                 else {
                     alert("Incorrect Password !")
                 }
-            
             }
-       
-        
-
-        console.log(email, password)
+        //console.log(email, password)
         //console.log(ls.email)
     })
 </script>

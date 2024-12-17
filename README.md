@@ -53,3 +53,6 @@ https://ecommerceapplication-lake.vercel.app/
 
 # Thanks Page : 
 <img src = "img/11.png" />
+
+# Order Page : 
+<img src = "img/12.png" />

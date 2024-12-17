@@ -59,23 +59,6 @@
 
 </html>
 
-<script>
-    let cart = JSON.parse(localStorage.getItem("cartItem")) || [];
-    console.log(cart)
-
-    document.querySelector("form").addEventListener("submit", function (event) {
-        event.preventDefault()
-        let otp = document.querySelector("#otp").value;
-
-        if (otp == "123456") {
-           // alert("Payment Successfully !")
-          let a =  localStorage.removeItem("cartItem");
-          console.log(a);
-            //localStorage.setItem("cartItem" , JSON.stringify(cart));
-            window.location.href = "thanks.html"
-        }
-        else {
-            alert("Wrong OTP, Please Try Again !!")
-        }
-    })
+<script src="js/otp.js">
+   
 </script>

@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    #main1 {
+        width: 100%;
+    }
+
+    #main1>div {
+        margin: 20px;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+</style>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+          <a href="index.html">e-Commerce</a>
+        </div>
+        <nav class="nav-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Shop</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="conatct.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <input type="text" name="search" id="search" placeholder=" 🔍 Search Product Here ">
+        </div>
+        <div class="actions">
+    
+          <a href="cart.html" class="icon">🛒</a>
+          <a href="login.html" class="icon">👤</a>
+        </div>
+      </header>
+    
+
+    <div id="main1"></div>
+
+    <footer class="footer">
+        <div class="footer-container">
+          <!-- About Section -->
+          <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>
+              We are a leading brand committed to delivering high-quality products to our customers.
+              Stay connected for the latest updates and promotions.
+            </p>
+          </div>
+    
+          <!-- Links Section -->
+          <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="cart.html">Shop</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="conatct.html">Contact</a></li>
+            </ul>
+          </div>
+    
+          <!-- Newsletter Section -->
+          <div class="footer-section newsletter">
+            <h3>Subscribe</h3>
+            <p>Sign up for exclusive offers and updates:</p>
+            <form action="#">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+    
+        <div class="footer-bottom">
+          <p>&copy; 2024 e-Commerce. All rights reserved.</p>
+          <ul class="socials">
+            <li><a href="#facebook">Facebook</a></li>
+            <li><a href="#twitter">Twitter</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+            <li><a href="#linkedin">LinkedIn</a></li>
+          </ul>
+        </div>
+      </footer>
+
+</body>
+
+</html>
+<script src="js/order.js"></script>
